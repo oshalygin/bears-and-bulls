@@ -12,7 +12,8 @@
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "npm test -- --watch",
     "installDeps": "yarn && cd client && yarn"
   },
   "dependencies": {
@@ -34,5 +35,11 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-jest": "^22.4.3",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3"
   }
 }
