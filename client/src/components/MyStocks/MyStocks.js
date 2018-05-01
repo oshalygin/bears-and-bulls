@@ -18,17 +18,18 @@ const MyStocks = (props) => {
 }
 
 
-function mapStateToProps(state) {
-    return {
-      stocks: state.stocks,
-    };
-  }
-  function mapDispatchToProps(dispatch) {
-    return {
-      stocksActions: bindActionCreators(stocksActionCreators, dispatch),
-      
-    };
-  }
+export function mapStateToProps(state) {
+  return {
+    stocks: state.stocks,
+  };
+}
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    stocksActions: bindActionCreators(stocksActionCreators, dispatch),
+    
+  };
+}
   
-  export default connect(mapStateToProps, mapDispatchToProps)(MyStocks);
+export default connect(mapStateToProps, mapDispatchToProps)(MyStocks);
   
