@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {shallow} from 'enzyme';
 import App from '../client/src/index';
 
 it('renders without crashing', () => {

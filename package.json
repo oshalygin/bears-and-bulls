@@ -18,15 +18,31 @@
     "installDeps": "yarn && cd client && yarn"
   },
   "jest": {
-    "setupFiles": ["./tests/jestsetup.js"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "testFileExtensions": ["es6", "js"],
-    "moduleFileExtensions": ["js", "json", "es6"]
+    "setupFiles": [
+      "./tests/jestsetup.js"
+    ],
+    "testRegex": ".*?(\\.test).js",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest/build/index.js"
+    },
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "es6"
+    ]
   },
   "dependencies": {
     "@types/auth0-js": "^8.11.2",
     "auth0-js": "^9.5.0",
     "axios": "^0.18.0",
+    "babel": "^6.23.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "echarts": "^4.0.4",
