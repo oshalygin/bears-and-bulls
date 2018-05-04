@@ -68,7 +68,7 @@ class Search extends Component {
 		return null
 	}
 
-	export validateQuantity = (quantity) => {
+	validateQuantity = (quantity) => {
 		if (quantity.length) {
 			    if (isNaN(quantity)) {
 			      return 'error'
