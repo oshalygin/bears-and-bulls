@@ -24,6 +24,15 @@ function mapDispatchToProps(dispatch) {
 }
 
 class Search extends Component {
+	constructor(props, context) {
+		super(props, context)
+		this.handleSelect = this.handleSelect.bind(this)
+		this.state = {
+			searchSymbol: '',
+			quantity: 0,
+			action: '',
+		}	
+	}
 
 	handleChange = (event) => {
 		this.setState({searchSymbol: event.target.value})
@@ -33,16 +42,6 @@ class Search extends Component {
 		event.preventDefault()
 		let searchSymbol = this.state.searchSymbol.trim().toUpperCase()
 		this.props.searchActions.query(searchSymbol)
-	}
-
-	constructor(props, context) {
-		super(props, context)
-		this.handleSelect = this.handleSelect.bind(this)
-		this.state = {
-			searchSymbol: '',
-			quantity: 0,
-			action: '',
-		}	
 	}
 
 	handleSelect = (key) => {

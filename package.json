@@ -12,30 +12,10 @@
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "react-scripts test",
+    "test:watch": "test --watch",
     "test:coverage": "jest --coverage",
     "installDeps": "yarn && cd client && yarn"
-  },
-  "jest": {
-    "setupFiles": [
-      "./tests/jestsetup.js"
-    ],
-    "testRegex": ".*?(\\.test).js",
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ],
-    "transform": {
-      ".*": "<rootDir>/node_modules/babel-jest/build/index.js"
-    },
-    "testFileExtensions": [
-      "js"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "es6"
-    ]
   },
   "dependencies": {
     "@types/auth0-js": "^8.11.2",
@@ -61,12 +41,15 @@
     "react-redux": "^5.0.7",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.1.4",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.46",
     "babel-cli": "^6.26.0",
+    "babel-core": "^7.0.0-0",
     "babel-jest": "^22.4.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
