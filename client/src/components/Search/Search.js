@@ -24,18 +24,12 @@ function mapDispatchToProps(dispatch) {
 }
 
 class Search extends Component {
-	state = {
-		searchSymbol: '',
-		quantity: 0,
-		action: '',
-	}
 
-
-	handleChange = event => {
+	handleChange = (event) => {
 		this.setState({searchSymbol: event.target.value})
 	}
 
-	handleSubmit = event => {
+	handleSubmit = (event) => {
 		event.preventDefault()
 		let searchSymbol = this.state.searchSymbol.trim().toUpperCase()
 		this.props.searchActions.query(searchSymbol)
@@ -44,6 +38,11 @@ class Search extends Component {
 	constructor(props, context) {
 		super(props, context)
 		this.handleSelect = this.handleSelect.bind(this)
+		this.state = {
+			searchSymbol: '',
+			quantity: 0,
+			action: '',
+		}	
 	}
 
 	handleSelect = (key) => {
@@ -70,9 +69,9 @@ class Search extends Component {
 		return null
 	}
 
-	validateQuantity = () => {
-		if (this.state.quantity.length) {
-			    if (isNaN(this.state.quantity)) {
+	export validateQuantity = (quantity) => {
+		if (quantity.length) {
+			    if (isNaN(quantity)) {
 			      return 'error'
 			    }
 			    return null
@@ -132,7 +131,7 @@ class Search extends Component {
 									<th>{this.props.search.symbol}</th>
 									<th>{this.props.search.price}</th>
 									<th>
-										<FormGroup controlId='formValidationError' validationState={this.validateQuantity()} >
+										<FormGroup controlId='formValidationError' validationState={this.validateQuantity(this.state.quantity)} >
 											<FormControl value={this.state.quantity} className='quantityInput' onChange={this.handleQuantityChange} componentClass='input' />
 										</FormGroup>
 									</th>

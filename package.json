@@ -13,8 +13,15 @@
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
     "test": "jest",
-    "test:watch": "npm test -- --watch",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "installDeps": "yarn && cd client && yarn"
+  },
+  "jest": {
+    "setupFiles": ["./tests/jestsetup.js"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"]
   },
   "dependencies": {
     "@types/auth0-js": "^8.11.2",
@@ -23,6 +30,9 @@
     "body-parser": "^1.18.2",
     "concurrently": "^3.5.1",
     "echarts": "^4.0.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "express": "^4.16.3",
     "jwt-decode": "^2.2.0",
     "moment": "^2.22.1",
@@ -42,7 +52,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^22.4.3",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "jest": "^22.4.3"
+    "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.2"
   }
 }

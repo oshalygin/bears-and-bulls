@@ -1,2 +1,0 @@
-import * from './MyStocks.js'
-
