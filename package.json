@@ -12,7 +12,7 @@
     "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "build": "node scripts/build.js",
     "seed": "node scripts/seedDB.js",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "test:watch": "test --watch",
     "test:coverage": "jest --coverage",
     "installDeps": "yarn && cd client && yarn"
@@ -35,17 +35,19 @@
     "mongoose": "^5.0.16",
     "morgan": "^1.9.0",
     "path": "^0.12.7",
-    "react": "^16.3.2",
+    "react": "16",
     "react-bootstrap": "^0.32.1",
-    "react-dom": "^16.3.2",
+    "react-dom": "16",
     "react-moment": "^0.7.0",
     "react-redux": "^5.0.7",
     "react-router-bootstrap": "^0.24.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "^1.1.4",
+    "react-scripts-ts": "^2.15.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "ts-jest": "^22.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
